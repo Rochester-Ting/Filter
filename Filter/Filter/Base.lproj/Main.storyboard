@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G1k-WC-qdf">
+                                <rect key="frame" x="0.0" y="70" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ucV-gu-nEQ"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AN7-iF-DuB">
+                                <rect key="frame" x="119" y="390" width="137" height="29"/>
+                                <segments>
+                                    <segment title="旧色调"/>
+                                    <segment title="高斯模糊"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentClick:" destination="BYZ-38-t0r" eventType="valueChanged" id="r7v-QL-coE"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fem-MJ-xSn">
+                                <rect key="frame" x="117" y="438" width="142" height="31"/>
+                                <connections>
+                                    <action selector="slide:" destination="BYZ-38-t0r" eventType="valueChanged" id="1Rl-r2-zt8"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AN7-iF-DuB" firstAttribute="top" secondItem="G1k-WC-qdf" secondAttribute="bottom" constant="20" id="09a-ao-o6U"/>
+                            <constraint firstItem="fem-MJ-xSn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A2G-v3-PLx"/>
+                            <constraint firstItem="G1k-WC-qdf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Mgh-eR-oqe"/>
+                            <constraint firstItem="fem-MJ-xSn" firstAttribute="top" secondItem="AN7-iF-DuB" secondAttribute="bottom" constant="20" id="aAA-hr-PWX"/>
+                            <constraint firstAttribute="trailing" secondItem="G1k-WC-qdf" secondAttribute="trailing" id="bnJ-zJ-nb7"/>
+                            <constraint firstItem="AN7-iF-DuB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ehb-Th-neY"/>
+                            <constraint firstItem="G1k-WC-qdf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="mqH-F2-5UR"/>
+                            <constraint firstItem="fem-MJ-xSn" firstAttribute="leading" secondItem="AN7-iF-DuB" secondAttribute="leading" id="voz-9O-EAh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="G1k-WC-qdf" id="b9r-ZG-Aef"/>
+                        <outlet property="segment" destination="AN7-iF-DuB" id="lnR-Jn-RMF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
